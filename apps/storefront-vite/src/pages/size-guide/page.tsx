@@ -70,7 +70,7 @@ export default function SizeGuidePage() {
         {/* Custom Sizing Callout */}
         <div className="p-6 bg-gray-50 border border-gray-200 text-center">
           <p className="text-xs text-gray-600 font-light">
-            Need custom length alterations or bespoke sizing? Contact our Lagos atelier via{' '}
+            Need custom length alterations, UK fit consultation, or bespoke sizing? Contact our Lagos atelier &amp; London concierge via{' '}
             <Link to="/contact" className="text-[var(--color-brand-purple)] font-bold underline">
               Concierge Services
             </Link>.

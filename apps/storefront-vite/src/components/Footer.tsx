@@ -24,12 +24,17 @@ export default function Footer() {
           <div className="lg:col-span-5 flex flex-col items-start">
             <Logo light className="mb-6" />
             <p className="text-white/70 font-light text-sm leading-relaxed max-w-sm">
-              Ifẹ́mi Lifestyle is a premier Nigerian fashion and lifestyle house. We celebrate modern African femininity through timeless kaftans, tailored sets, artisanal scents, and bespoke home decor.
+              Ifẹ́mi Lifestyle is a contemporary African luxury house operating between Lagos, Nigeria and London, United Kingdom. We celebrate modern femininity through handcrafted fluid kaftans, tailored sets, artisanal scents, and bespoke living.
             </p>
-            <div className="mt-6 flex items-center gap-4 text-xs tracking-widest text-[var(--color-brand-lavender)] uppercase">
-              <span>Lagos, Nigeria</span>
-              <span>•</span>
-              <span>Nationwide & Global Delivery</span>
+            <div className="mt-6 space-y-1.5 text-xs text-[var(--color-brand-lavender)]">
+              <div className="flex items-center gap-2">
+                <span className="font-semibold text-white">Lagos Atelier:</span>
+                <span>Victoria Island, Lagos, Nigeria 🇳🇬</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="font-semibold text-white">London Studio:</span>
+                <span>Mayfair, London, United Kingdom 🇬🇧</span>
+              </div>
             </div>
           </div>
 
@@ -138,11 +143,13 @@ export default function Footer() {
 
         {/* Bottom Bar */}
         <div className="pt-8 flex flex-col md:flex-row items-center justify-between text-xs text-white/50 font-light gap-4">
-          <p>© {new Date().getFullYear()} Ifẹ́mi Lifestyle Ltd. All rights reserved. Crafted in Nigeria.</p>
-          <div className="flex items-center gap-6">
-            <span>Secure Checkout powered by Paystack</span>
+          <p>© {new Date().getFullYear()} Ifẹ́mi Lifestyle Ltd. Lagos & London. All rights reserved.</p>
+          <div className="flex items-center gap-4 flex-wrap">
+            <span>Paystack (NGN ₦)</span>
             <span>•</span>
-            <span>NGN (₦)</span>
+            <span>Stripe &amp; UK Cards (GBP £)</span>
+            <span>•</span>
+            <span>UK Royal Mail / DPD &amp; Nigeria Express</span>
           </div>
         </div>
       </div>

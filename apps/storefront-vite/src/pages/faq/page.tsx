@@ -1,31 +1,30 @@
-
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 const faqs = [
   {
-    q: 'How does delivery work across Lagos and nationwide Nigerian states?',
-    a: 'For orders within Lagos (Island and Mainland), deliveries are completed within 24–48 hours via dedicated dispatch. For orders across Abuja, Port Harcourt, and other states, delivery takes 2–4 business days via DHL/GIG Logistics. Orders over ₦100,000 enjoy complimentary Lagos delivery.'
+    q: 'How does delivery work in the UK and Nigeria?',
+    a: 'We operate domestic distribution hubs in both Lagos, Nigeria and London, United Kingdom. In the UK, delivery takes 2–3 business days via Royal Mail Tracked and DPD with zero customs duties. In Nigeria, Lagos delivery takes 24–48 hours, and nationwide delivery (Abuja, Port Harcourt, etc.) takes 2–4 days via DHL/GIG Logistics.'
   },
   {
-    q: 'Are Ifẹ́mi Lifestyle kaftans suitable for different body types?',
-    a: 'Yes. Our signature kaftans feature an engineered One Size Fluid Drape with inner waist adjustments. They comfortably and beautifully flatter women from UK size 8 up to UK size 20.'
+    q: 'Can I pay in British Pounds (GBP) or Nigerian Naira (NGN)?',
+    a: 'Yes. You can switch your currency anytime via the top header bar. We accept Paystack for Nigerian Naira cards and bank transfers, and Stripe / international card checkout for British Pound (£ GBP) payments.'
   },
   {
-    q: 'What payment methods do you accept?',
-    a: 'We process all payments through Paystack, accepting Nigerian Naira debit cards (Mastercard, Visa, Verve), direct bank transfers, USSD, and Apple Pay where enabled. All transactions are 256-bit SSL encrypted.'
+    q: 'Are Ifẹ́mi Lifestyle kaftans and trouser sets tailored to UK sizing?',
+    a: 'Yes. Our signature kaftans feature our One Size Fluid Drape engineered to flatter silhouettes from UK size 8 to UK size 20. Our tailored trouser sets and loungewear pieces follow standard British sizing from UK 6 (XS) to UK 20 (XXL).'
   },
   {
-    q: 'What is your return and exchange policy?',
-    a: 'We accept returns and exchanges for unworn garments with original tags attached within 7 days of delivery. Custom-tailored pieces or opened home diffusers cannot be returned.'
+    q: 'Are there any customs duties or taxes for UK orders?',
+    a: 'No. Orders dispatched to UK addresses are shipped directly from our London Studio hub. You will not face any import tariffs, customs clearance delays, or unexpected handling charges.'
   },
   {
-    q: 'Can I request bespoke sizing or custom lengths?',
-    a: 'Yes, our Lagos atelier accommodates bespoke requests and custom hem lengths. Please contact our WhatsApp concierge before or immediately after placing your order.'
+    q: 'What is your return and exchange policy in the UK and Nigeria?',
+    a: 'We accept returns and exchanges for unworn garments with original tags intact within 7 days of delivery. UK customers can return items directly to our London Studio address, while Nigerian customers return to our Lagos Atelier.'
   },
   {
-    q: 'How long do your botanical reed diffusers last?',
-    a: 'Ifẹ́mi 250ml luxury reed diffusers provide a continuous aroma for 3 to 4 months. We recommend turning the natural reeds once per week for optimal projection.'
+    q: 'Can I request bespoke sizing or custom hem alterations?',
+    a: 'Yes, our Lagos atelier accommodates bespoke requests and custom hem lengths. Contact our concierge via WhatsApp in Lagos (+234) or London (+44) before placing your order.'
   }
 ];
 
@@ -37,13 +36,13 @@ export default function FAQPage() {
       <div className="max-w-3xl mx-auto">
         <header className="mb-14 text-center">
           <span className="text-[10px] uppercase tracking-[0.35em] text-[var(--color-brand-purple)] font-bold">
-            Customer Care
+            Transatlantic Customer Care
           </span>
           <h1 className="font-playfair text-4xl md:text-5xl text-[var(--color-brand-navy)] mt-2 mb-4">
             Frequently Asked Questions
           </h1>
           <p className="text-gray-500 font-light text-sm">
-            Everything you need to know about our collections, delivery, and payment.
+            Everything you need to know about our Lagos atelier, London studio, UK delivery, and multi-currency payments.
           </p>
         </header>
 
@@ -72,7 +71,7 @@ export default function FAQPage() {
 
         <div className="mt-12 text-center bg-[var(--color-brand-navy)] text-white p-8">
           <h3 className="font-playfair text-xl mb-2">Still have questions?</h3>
-          <p className="text-xs text-white/70 font-light mb-4">Our Lagos styling team is available to assist.</p>
+          <p className="text-xs text-white/70 font-light mb-4">Our Lagos &amp; London concierge team is available to assist.</p>
           <Link to="/contact" className="inline-block px-6 py-3 bg-[var(--color-brand-lavender)] text-[var(--color-brand-navy)] text-xs uppercase tracking-widest font-bold hover:bg-white transition-colors">
             Contact Concierge →
           </Link>

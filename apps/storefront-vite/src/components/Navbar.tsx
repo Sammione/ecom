@@ -6,6 +6,7 @@ import Logo from './Logo';
 import { useCart } from '../context/CartContext';
 import { useWishlist } from '../context/WishlistContext';
 import { useAuth } from '../context/AuthContext';
+import { useCurrency } from '../context/CurrencyContext';
 
 export default function Navbar() {
   const [searchOpen, setSearchOpen] = useState(false);
@@ -18,6 +19,7 @@ export default function Navbar() {
   const { totalItems } = useCart();
   const { totalWishlistItems } = useWishlist();
   const { isAuthenticated, user } = useAuth();
+  const { currency, setCurrency } = useCurrency();
 
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
@@ -40,7 +42,39 @@ export default function Navbar() {
 
   return (
     <>
-      <header className="w-full h-20 flex items-center justify-between px-6 md:px-12 fixed top-0 z-50 bg-[var(--color-brand-cream)]/95 backdrop-blur-md border-b border-[var(--color-brand-navy)]/10 transition-all">
+      {/* Top Transatlantic Bar */}
+      <div className="w-full bg-[var(--color-brand-navy)] text-white text-[10px] tracking-[0.15em] uppercase py-2 px-4 md:px-12 fixed top-0 z-50 flex items-center justify-between border-b border-white/10 shadow-xs">
+        <div className="hidden lg:flex items-center gap-2 text-gray-300 font-medium">
+          <span className="inline-block w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+          <span>Lagos Atelier 🇳🇬 × London Studio 🇬🇧</span>
+        </div>
+        <div className="text-center mx-auto text-[9px] md:text-[10px] font-medium text-gray-200">
+          <span>Express Delivery Across Nigeria &amp; UK Tracked Delivery via Royal Mail / DPD</span>
+        </div>
+        <div className="flex items-center gap-1 bg-white/10 px-2 py-0.5 rounded-xs">
+          <button
+            onClick={() => setCurrency('NGN')}
+            className={`px-1.5 py-0.5 font-bold transition-all text-[9px] ${
+              currency === 'NGN' ? 'bg-[var(--color-brand-purple)] text-white' : 'text-gray-300 hover:text-white'
+            }`}
+            title="Nigerian Naira"
+          >
+            ₦ NGN
+          </button>
+          <span className="opacity-40 text-xs">|</span>
+          <button
+            onClick={() => setCurrency('GBP')}
+            className={`px-1.5 py-0.5 font-bold transition-all text-[9px] ${
+              currency === 'GBP' ? 'bg-[var(--color-brand-purple)] text-white' : 'text-gray-300 hover:text-white'
+            }`}
+            title="British Pound Sterling"
+          >
+            £ GBP
+          </button>
+        </div>
+      </div>
+
+      <header className="w-full h-20 flex items-center justify-between px-6 md:px-12 fixed top-8 z-50 bg-[var(--color-brand-cream)]/95 backdrop-blur-md border-b border-[var(--color-brand-navy)]/10 transition-all">
         {/* Mobile menu toggle */}
         <button
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}

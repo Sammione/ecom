@@ -29,41 +29,35 @@ export default function ContactPage() {
           {/* Left: Contact Info */}
           <div className="lg:col-span-5 bg-[var(--color-brand-navy)] text-[var(--color-brand-cream)] p-8 md:p-12 flex flex-col justify-between">
             <div>
-              <h2 className="font-playfair text-2xl mb-8 border-b border-white/10 pb-4">
-                Lagos Flagship & Showroom
+              <h2 className="font-playfair text-2xl mb-6 border-b border-white/10 pb-4">
+                Transatlantic Concierge
               </h2>
 
               <div className="space-y-6 text-xs font-light text-white/80 leading-relaxed">
-                <div>
-                  <h4 className="uppercase tracking-widest text-[var(--color-brand-lavender)] font-bold text-[10px] mb-1">
-                    Showroom Address
+                <div className="p-3 bg-white/5 border border-white/10 rounded-xs">
+                  <h4 className="uppercase tracking-widest text-[var(--color-brand-lavender)] font-bold text-[10px] mb-1 flex items-center gap-1.5">
+                    <span>🇳🇬</span> Lagos Flagship Atelier
                   </h4>
-                  <p>Plot 14 Admiralty Way, Lekki Phase 1</p>
-                  <p>Lagos State, Nigeria</p>
+                  <p>Plot 14 Admiralty Way, Lekki Phase 1, Lagos, Nigeria</p>
+                  <p className="mt-1 text-white font-medium">Direct Line: +234 (0) 803 123 4567</p>
+                  <p className="text-white/60">Hours: Mon – Fri: 9:00 AM – 6:00 PM (WAT)</p>
+                </div>
+
+                <div className="p-3 bg-white/5 border border-white/10 rounded-xs">
+                  <h4 className="uppercase tracking-widest text-[var(--color-brand-lavender)] font-bold text-[10px] mb-1 flex items-center gap-1.5">
+                    <span>🇬🇧</span> London Concierge Studio
+                  </h4>
+                  <p>Mayfair, London W1K, United Kingdom</p>
+                  <p className="mt-1 text-white font-medium">UK Concierge: +44 (0) 20 7946 0912</p>
+                  <p className="text-white/60">Hours: Mon – Fri: 9:00 AM – 5:30 PM (GMT)</p>
                 </div>
 
                 <div>
                   <h4 className="uppercase tracking-widest text-[var(--color-brand-lavender)] font-bold text-[10px] mb-1">
-                    Direct Concierge Hotline
+                    Email Inquiries
                   </h4>
-                  <p>+234 (0) 803 123 4567</p>
-                  <p>+234 (0) 812 987 6543</p>
-                </div>
-
-                <div>
-                  <h4 className="uppercase tracking-widest text-[var(--color-brand-lavender)] font-bold text-[10px] mb-1">
-                    Email Correspondence
-                  </h4>
-                  <p>concierge@ifemi.ng</p>
+                  <p>concierge@ifemi.ng (Global &amp; UK Inquiries)</p>
                   <p>orders@ifemi.ng</p>
-                </div>
-
-                <div>
-                  <h4 className="uppercase tracking-widest text-[var(--color-brand-lavender)] font-bold text-[10px] mb-1">
-                    Operating Hours (WAT)
-                  </h4>
-                  <p>Monday – Friday: 9:00 AM – 6:00 PM</p>
-                  <p>Saturday: 10:00 AM – 5:00 PM</p>
                 </div>
               </div>
             </div>

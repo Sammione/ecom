@@ -3,6 +3,7 @@ import React, { useState, useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import { useCart } from '../../context/CartContext';
 import { useWishlist } from '../../context/WishlistContext';
+import { useCurrency } from '../../context/CurrencyContext';
 
 export interface CatalogProduct {
   id: string;
@@ -125,6 +126,7 @@ export default function ShopClient() {
 
   const { addItem } = useCart();
   const { toggleWishlist, isInWishlist } = useWishlist();
+  const { formatPrice } = useCurrency();
 
   const categories = ['All', 'Kaftans', 'Trouser Sets', 'Loungewear', 'Diffusers', 'Cushions', 'Jewellery'];
 
@@ -342,11 +344,11 @@ export default function ShopClient() {
                     <div className="mt-3 flex items-center justify-between pt-2 border-t border-gray-100">
                       <div className="flex items-baseline gap-2">
                         <span className="font-light text-sm text-[var(--color-brand-navy)]">
-                          ₦ {(product.salePrice || product.price).toLocaleString()}
+                          {formatPrice(product.salePrice || product.price)}
                         </span>
                         {product.salePrice && (
                           <span className="text-xs text-gray-400 line-through">
-                            ₦ {product.price.toLocaleString()}
+                            {formatPrice(product.price)}
                           </span>
                         )}
                       </div>

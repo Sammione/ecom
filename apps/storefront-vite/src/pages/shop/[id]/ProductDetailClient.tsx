@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import { useCart } from '../../../context/CartContext';
 import { useWishlist } from '../../../context/WishlistContext';
+import { useCurrency } from '../../../context/CurrencyContext';
 
 export interface ProductDetailProps {
   product: {
@@ -27,6 +28,7 @@ export default function ProductDetailClient({ product }: ProductDetailProps) {
   const navigate = useNavigate();
   const { addItem } = useCart();
   const { toggleWishlist, isInWishlist } = useWishlist();
+  const { formatPrice } = useCurrency();
 
   const [selectedColor, setSelectedColor] = useState(product.colors[0]?.name || 'Standard');
   const [selectedSize, setSelectedSize] = useState(product.isOneSize ? 'One Size' : product.sizes?.[0] || 'M');
@@ -149,11 +151,11 @@ export default function ProductDetailClient({ product }: ProductDetailProps) {
             {/* Price */}
             <div className="flex items-baseline gap-4 mt-2">
               <span className="text-2xl font-light text-[var(--color-brand-navy)]">
-                ₦ {(product.salePrice || product.price).toLocaleString()}
+                {formatPrice(product.salePrice || product.price)}
               </span>
               {product.salePrice && (
                 <span className="text-sm text-gray-400 line-through">
-                  ₦ {product.price.toLocaleString()}
+                  {formatPrice(product.price)}
                 </span>
               )}
               <span className="text-xs font-semibold px-2.5 py-0.5 bg-emerald-50 text-emerald-700 border border-emerald-200">
@@ -317,9 +319,10 @@ export default function ProductDetailClient({ product }: ProductDetailProps) {
               {activeTab === 'care' && <p>{product.fabricCare}</p>}
               {activeTab === 'delivery' && (
                 <div className="space-y-2">
-                  <p>• <strong>Lagos Island & Mainland:</strong> 24–48 hours delivery (₦3,000 flat fee or Free over ₦100,000).</p>
-                  <p>• <strong>Nationwide (Abuja, Port Harcourt, Kano, etc.):</strong> 2–4 working days via DHL/GIG Logistics.</p>
-                  <p>• <strong>International Shipping:</strong> 5–7 business days with DHL Express.</p>
+                  <p>• <strong>🇬🇧 United Kingdom Domestic:</strong> 2–3 business days via Royal Mail Tracked / DPD (£6.50 flat fee or Free over £100). Zero customs fees.</p>
+                  <p>• <strong>🇳🇬 Lagos Island &amp; Mainland:</strong> 24–48 hours delivery (₦3,500 flat fee or Free over ₦100,000).</p>
+                  <p>• <strong>🇳🇬 Nationwide (Abuja, Port Harcourt, etc.):</strong> 2–4 working days via DHL/GIG Logistics.</p>
+                  <p>• <strong>✈️ Worldwide Shipping:</strong> 4–7 business days via DHL Express.</p>
                 </div>
               )}
             </div>

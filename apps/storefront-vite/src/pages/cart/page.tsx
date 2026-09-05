@@ -2,9 +2,11 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useCart } from '../../context/CartContext';
+import { useCurrency } from '../../context/CurrencyContext';
 
 export default function CartPage() {
   const { items, updateQuantity, removeItem, clearCart, subtotal, discountCode, discountAmount, applyDiscount, removeDiscount } = useCart();
+  const { formatPrice, currency } = useCurrency();
   const [promoInput, setPromoInput] = useState('');
   const [promoFeedback, setPromoFeedback] = useState<{ success?: boolean; message?: string } | null>(null);
 
@@ -63,7 +65,7 @@ export default function CartPage() {
                         {item.color && <span>Color: <strong className="text-gray-800">{item.color}</strong></span>}
                       </div>
                       <div className="text-sm font-semibold text-[var(--color-brand-navy)] mt-2">
-                        ₦ {item.price.toLocaleString()} each
+                        {formatPrice(item.price)} each
                       </div>
                     </div>
                   </div>
@@ -91,9 +93,9 @@ export default function CartPage() {
                     </div>
 
                     <div className="text-right min-w-[90px]">
-                      <span className="font-light text-base text-[var(--color-brand-navy)]">
-                        ₦ {(item.price * item.quantity).toLocaleString()}
-                      </span>
+                      <div className="text-base font-playfair font-semibold text-[var(--color-brand-navy)]">
+                        {formatPrice(item.price * item.quantity)}
+                      </div>
                     </div>
 
                     <button
@@ -160,19 +162,19 @@ export default function CartPage() {
                 <div className="space-y-3 text-sm font-light border-t border-gray-200 pt-4 mb-6">
                   <div className="flex justify-between text-gray-600">
                     <span>Bag Subtotal</span>
-                    <span>₦ {subtotal.toLocaleString()}</span>
+                    <span>{formatPrice(subtotal)}</span>
                   </div>
 
                   {discountAmount > 0 && (
                     <div className="flex justify-between text-emerald-600">
                       <span>VIP Discount</span>
-                      <span>- ₦ {discountAmount.toLocaleString()}</span>
+                      <span>- {formatPrice(discountAmount)}</span>
                     </div>
                   )}
 
                   <div className="flex justify-between text-gray-600">
-                    <span>Estimated Shipping (Lagos)</span>
-                    <span>{estimatedDelivery === 0 ? 'FREE' : `₦ ${estimatedDelivery.toLocaleString()}`}</span>
+                    <span>Estimated Shipping ({currency === 'GBP' ? 'UK Domestic' : 'Nigeria'})</span>
+                    <span>{estimatedDelivery === 0 ? 'FREE' : formatPrice(estimatedDelivery)}</span>
                   </div>
                 </div>
 
@@ -183,7 +185,7 @@ export default function CartPage() {
                     <span className="text-[10px] text-gray-400">VAT included</span>
                   </div>
                   <span className="text-2xl font-light text-[var(--color-brand-navy)] font-playfair">
-                    ₦ {finalTotal.toLocaleString()}
+                    {formatPrice(finalTotal)}
                   </span>
                 </div>
 
