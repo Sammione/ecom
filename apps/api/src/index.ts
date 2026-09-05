@@ -5,7 +5,7 @@ import morgan from 'morgan';
 import dotenv from 'dotenv';
 import productRoutes from './routes/products';
 import authRoutes from './routes/auth';
-import paymentRoutes from './routes/payments';
+
 import orderRoutes from './routes/orders';
 
 dotenv.config();
@@ -24,7 +24,7 @@ app.get('/api/health', (req: Request, res: Response) => {
 
 app.use('/api/products', productRoutes);
 app.use('/api/auth', authRoutes);
-app.use('/api/payments', paymentRoutes);
+
 app.use('/api/orders', orderRoutes);
 
 app.listen(port, () => {
