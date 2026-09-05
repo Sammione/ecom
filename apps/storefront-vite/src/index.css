@@ -1,0 +1,23 @@
+@import "tailwindcss";
+@source "../../packages/ui";
+
+@theme {
+  --color-brand-navy: #0B132B;
+  --color-brand-purple: #4B2E83;
+  --color-brand-lavender: #E6E6FA;
+  --color-brand-cream: #FAF9F6;
+  --color-brand-charcoal: #333333;
+  --font-playfair: "Playfair Display", Georgia, serif;
+  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+:root {
+  --background: var(--color-brand-cream);
+  --foreground: var(--color-brand-charcoal);
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+}

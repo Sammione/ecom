@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 800" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0B132B"/><stop offset="100%" stop-color="#1C2541"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="40%" r="50%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0.35"/>
+    </radialGradient>
+    <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F3E5AB"/>
+      <stop offset="50%" stop-color="#D4AF37"/>
+      <stop offset="100%" stop-color="#AA7C11"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background Base -->
+  <rect width="600" height="800" fill="url(#bg)"/>
+  <rect width="600" height="800" fill="url(#glow)"/>
+
+  <!-- Subtle Luxury Geometric Frame -->
+  <rect x="25" y="25" width="550" height="750" fill="none" stroke="#D4AF37" stroke-width="1" stroke-opacity="0.3"/>
+  <rect x="35" y="35" width="530" height="730" fill="none" stroke="#D4AF37" stroke-width="0.5" stroke-opacity="0.15"/>
+
+  <!-- Brand Wordmark Header -->
+  <g transform="translate(300, 90)" text-anchor="middle">
+    <text y="0" font-family="'Playfair Display', Georgia, serif" font-weight="900" font-size="28" fill="#FAF9F6" letter-spacing="-1">ifẹ́mi</text>
+    <text y="16" font-family="Inter, sans-serif" font-weight="600" font-size="8" fill="#D4AF37" letter-spacing="4">L I F E S T Y L E</text>
+    <text y="30" font-family="Inter, sans-serif" font-weight="400" font-size="7" fill="#FAF9F6" opacity="0.5" letter-spacing="2">ATELIER LAGOS</text>
+  </g>
+
+  <!-- Center Artwork Icon & Silhouette -->
+  <g transform="translate(300, 390)" text-anchor="middle">
+    <!-- Ambient Circle Backing -->
+    <circle r="140" fill="#ffffff" fill-opacity="0.04" stroke="#D4AF37" stroke-width="1" stroke-dasharray="3 3" stroke-opacity="0.3"/>
+    <circle r="110" fill="#ffffff" fill-opacity="0.03"/>
+    
+    <!-- Custom Vector Silhouette -->
+    <path d="M-60,-80 C-40,-50 -20,-70 0,-70 C20,-70 40,-50 60,-80 L85,60 C60,75 20,85 0,85 C-20,85 -60,75 -85,60 Z" fill="none" stroke="url(#gold)" stroke-width="2.5"/>
+    <path d="M0,-70 L0,50" stroke="url(#gold)" stroke-width="1.5" stroke-dasharray="4 3"/>
+    <circle cx="0" cy="-30" r="14" fill="none" stroke="url(#gold)" stroke-width="1.5"/>
+  </g>
+
+  <!-- Category & Product Title Footer -->
+  <g transform="translate(300, 680)" text-anchor="middle">
+    <rect x="-90" y="-32" width="180" height="20" fill="#D4AF37" rx="2"/>
+    <text y="-18" font-family="Inter, sans-serif" font-weight="700" font-size="8" fill="#0B132B" letter-spacing="2">KAFTAN COLLECTION</text>
+    
+    <text y="14" font-family="'Playfair Display', Georgia, serif" font-weight="700" font-size="20" fill="#FAF9F6">Midnight Elegance Kaftan</text>
+    <text y="36" font-family="monospace" font-weight="600" font-size="10" fill="#D4AF37" opacity="0.8" letter-spacing="1">SKU: KAFTAN-BLU-001</text>
+  </g>
+</svg>
