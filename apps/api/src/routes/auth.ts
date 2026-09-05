@@ -1,7 +1,7 @@
 import { Router, Request, Response } from 'express';
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
-import { prisma } from '@repo/database';
+import { prisma } from '../db';
 
 const router = Router();
 const JWT_SECRET = process.env.JWT_SECRET || 'super-secret-key-for-dev-only';
